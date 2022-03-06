@@ -6,6 +6,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class TestWithOracle {
 
@@ -71,6 +75,38 @@ public class TestWithOracle {
         Assert.assertEquals(actualSalary,expectedSalary);
     }
 
+    @Test
+    public void listOfMapExample(){
+        Map<String,Object> rowOneData = new HashMap<>();  // insertion order is not kept
+        rowOneData.put("firstName","Steven");
+        rowOneData.put("lastName","King");
+        rowOneData.put("salary","24000");
+        System.out.println("rowOneData = " + rowOneData);
 
+        Map<String,Object > rowTwoData = new HashMap<>();
+        rowTwoData.put("firstName","Neena");
+        rowTwoData.put("lastName","Kochhar");
+        rowTwoData.put("salary","17000");
+        System.out.println("rowTwoData = " + rowTwoData);
+
+        List<Map<String,Object>> list = new ArrayList<>();
+
+        list.add(rowOneData);
+        list.add(rowTwoData);
+
+        // get Neena's salary
+        System.out.println("get Neena's salary"+ list.get(1).get("salary"));
+
+    }
+
+
+    @Test
+    public void DynamicListOfMap(){
+
+
+
+
+
+    }
 
 }
