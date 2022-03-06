@@ -22,7 +22,7 @@ public class TestWithOracle {
         String dbUrl = "jdbc:oracle:thin:@54.91.210.3:1521:xe";
         String dbUserName = "hr";
         String dbPassWord = "hr";
-        String query = "select first_name,last_name,salary from employees";
+        String query = "select * from regions";
 
         try {
             connection = DriverManager.getConnection(dbUrl,dbUserName,dbPassWord);
@@ -135,6 +135,10 @@ public class TestWithOracle {
                  rowMap.put(rsmd.getColumnName(i),resultSet.getObject(i));
             }
             queryResultList.add(rowMap);
+        }
+
+        for (Map<String, Object> eachRow : queryResultList) {
+            System.out.println("eachRow = " + eachRow);
         }
 
 
