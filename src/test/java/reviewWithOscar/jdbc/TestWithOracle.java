@@ -101,12 +101,49 @@ public class TestWithOracle {
 
 
     @Test
-    public void DynamicListOfMap(){
+    public void MetaDataExample() throws SQLException {
+
+        DatabaseMetaData dbMetaData = connection.getMetaData();
+
+        System.out.println("dbMetaData.getDriverName() = " + dbMetaData.getDriverName());
+        System.out.println("dbMetaData.getDatabaseProductName() = " + dbMetaData.getDatabaseProductName());
+        System.out.println("dbMetaData.getDatabaseProductVersion() = " + dbMetaData.getDatabaseProductVersion());
+
+        ResultSetMetaData rsmd = resultSet.getMetaData();
+        int columnCount = rsmd.getColumnCount();
+
+        String columnName = rsmd.getColumnName(1);
+        System.out.println("columnCount = " + columnCount);
+        System.out.println("columnName = " + columnName);
+    }
+
+    @Test
+    public void DynamicMapMethod() throws SQLException {
+
+        List<Map<String,Object>> queryResultList = new ArrayList<>();
+        // row: resultset.next
+        // column count : rsmd.getColumnCount
+        ResultSetMetaData rsmd = resultSet.getMetaData();
+        int columnCount = rsmd.getColumnCount();
+        // KEY : columnName : rsmd.getColumnName
+
+        // VALUE:   how to read data from the cell : resultset.getObject
+
+        while (resultSet.next()){
+            Map<String,Object> rowMap = new HashMap<>();
+            for (int i = 1; i <= columnCount ; i++) {
+                 rowMap.put(rsmd.getColumnName(i),resultSet.getObject(i));
+            }
+            queryResultList.add(rowMap);
+        }
+
+
 
 
 
 
 
     }
+
 
 }
