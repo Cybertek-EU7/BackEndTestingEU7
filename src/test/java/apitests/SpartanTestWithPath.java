@@ -10,12 +10,13 @@ import java.util.List;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class SpartanTestWithPath {
 
     @BeforeClass
     public void beforeclass(){
-        baseURI="http://3.80.189.73:8000";
+        baseURI="http://54.91.210.3:8000";
     }
 
     /*
@@ -38,7 +39,7 @@ public class SpartanTestWithPath {
                 .when().get("/api/spartans/{id}");
 
         assertEquals(response.statusCode(),200);
-        assertEquals(response.contentType(),"application/json;charset=UTF-8");
+        assertEquals(response.contentType(),"application/json");
 
         //response.prettyPrint();
         //printing each key value in the json body/payload
@@ -97,6 +98,7 @@ public class SpartanTestWithPath {
             System.out.println(phone);
         }
     }
+
 
 
 
