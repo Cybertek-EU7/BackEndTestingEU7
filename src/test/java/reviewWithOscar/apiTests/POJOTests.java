@@ -1,6 +1,7 @@
 package reviewWithOscar.apiTests;
 
 import Day6_POJO.Spartan;
+import com.google.gson.Gson;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -35,8 +36,11 @@ String spartanUrl = "http://54.91.210.3:8000";
                 .when().get(zipUrl+"/us/{zip}");
 
 
-        PostCode zip22031 = response.body().as(PostCode.class);
+     //   PostCode zip22031 = response.body().as(PostCode.class);
 
+        Gson gson = new Gson();
+        PostCode zip22031 = gson.fromJson(response.body().asString(),PostCode.class);
+        System.out.println("zip22031.getCountry() = " + zip22031.getCountry());
 
     }
 
