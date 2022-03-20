@@ -58,3 +58,6 @@ Verify:
  last_name": "De Haan",
  "href": "http://54.91.210.3:1000/ords/hr/employees/102"
     "count": 2,
+    =======================================
+    POJO : Plain Old Java Object
+    Templete Class for your JSON response
