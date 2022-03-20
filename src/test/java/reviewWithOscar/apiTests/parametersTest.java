@@ -95,4 +95,11 @@ When I send a GET request to /us endpoint
 Then status code must be 404
 And content type must be application/json
      */
+    @Test
+    public void NegativeTestCase(){
+        given().accept(ContentType.JSON)
+                .and().pathParam("zip", 50000)
+                .when().get(zipUrl+"/us/{zip}")
+                .then().assertThat().statusCode(404).and().contentType("application/json");
+    }
 }

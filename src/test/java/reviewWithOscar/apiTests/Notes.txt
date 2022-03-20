@@ -16,7 +16,7 @@ RESPONSE: For Verification
             * path method
             * jsonPath method
             * Hemcrest Matchers
-            ==== De-serialization=====  For GET response
+            ==== De-serialization=====  For GET response  as() method
             * JSON response to JAVA Collections
             * JSON response to POJO objects
              ==== Serialization=====  For POST, PUT, PATCH request body
@@ -49,3 +49,12 @@ int [] arr = new int[];
 arr[0] ---> first indexed element
 GPATH Syntax
 "places[0].\'place name\'"
+
+Test Case:
+{{hrurl}}/employees?q={"job_id": "AD_VP"}
+Verify:
+"employee_id": 102,
+"first_name": "Lex",
+ last_name": "De Haan",
+ "href": "http://54.91.210.3:1000/ords/hr/employees/102"
+    "count": 2,
