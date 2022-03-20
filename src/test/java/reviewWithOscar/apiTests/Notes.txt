@@ -1,0 +1,30 @@
+API :   Interface: UI and DB
+        Middlemen:
+
+REQUESTs: CRUD Operators
+Create : POST
+Read : GET
+Update: PUT, PATCH (partial update)
+Delete: DELETE
+
+RESPONSE: For Verification
+        - Status Code
+        - Content Type
+        - Headers (contains, or equal to)
+        - body
+            * String, contains method
+            * path method
+            * jsonPath method
+            * Hemcrest Matchers
+            ==== De-serialization=====  For GET response
+            * JSON response to JAVA Collections
+            * JSON response to POJO objects
+             ==== Serialization=====  For POST, PUT, PATCH request body
+                        * JAVA Collections request to API as JSON object
+                        * POJO objects request to API as JSON object
+DataBinder or Object Mapper
+* we have two libraries: GSON & JACKSON
+
+Static Import: when we import the static way, we don't need to write class name for static methods
+
+Assert.assertEquals(response.statusCode(),200);

@@ -10,10 +10,10 @@ package Day6_POJO;
  */
 public class Spartan {
 
-        private int id;
-        private String name;
-        private String gender;
-        private long phone;
+       private int id;
+    private String name;
+    private String gender;
+    private long phone;
 
     public Spartan(int id, String name, String gender, long phone) {
         this.id = id;
