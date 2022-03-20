@@ -28,3 +28,24 @@ DataBinder or Object Mapper
 Static Import: when we import the static way, we don't need to write class name for static methods
 
 Assert.assertEquals(response.statusCode(),200);
+
+
+{      KEY                  VALUE
+    "post code":             "22031",
+    "country":              "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Fairfax",
+            "longitude": "-77.2649",
+            "state": "Virginia",
+            "state abbreviation": "VA",
+            "latitude": "38.8604"
+        }
+    ]
+}
+
+int [] arr = new int[];
+arr[0] ---> first indexed element
+GPATH Syntax
+"places[0].\'place name\'"
